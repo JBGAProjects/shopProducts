@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015", // Cambiado a ES2015 para mayor compatibilidad
+    "module": "commonjs", // Cambiado a CommonJS para Jest
+    "esModuleInterop": true,
+   "emitDecoratorMetadata": true,
+    "skipLibCheck": true, // Opcional: evita la verificación de las bibliotecas TypeScript
+    "types": ["jest", "node"] // Agregado para asegurar que TypeScript pueda encontrar los tipos de Jest
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
+}

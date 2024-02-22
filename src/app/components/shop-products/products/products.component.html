@@ -1,0 +1,36 @@
+<b *ngIf="loading$ | async">Cargando...</b>
+
+<div class="container" *ngIf="!(loading$ | async)">
+  <div class="products-list">
+    <ng-container *ngIf="products$ | async as products">
+      <div
+        class="product"
+        *ngFor="
+          let product of products
+            | slice : pageIndex * pageSize : (pageIndex + 1) * pageSize
+        "
+      >
+        <img [src]="product.thumbnail" alt="Product Thumbnail" />
+        <div class="product-details">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description }}</p>
+          <p>Price: {{ product.price }}</p>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="toggleFavorite(product)"
+          >
+            Toggle Favorite
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <mat-paginator
+    [length]="(products$ | async)?.length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="login-container">
+    <!--title for login-->
+    <div class="login-header">
+      <h2>DummyShop Login</h2>
+    </div>
+
+    <!--inputs user y password-->
+    <div class="login-content">
+      <form (ngSubmit)="onSubmit()">
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Usuario</mat-label>
+            <input
+              autocomplete="false"
+              matInput
+              name="username"
+              [(ngModel)]="username"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <div class="input-container">
+          <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input
+              autocomplete="false"
+              matInput
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+            />
+          </mat-form-field>
+        </div>
+        <button
+          mat-raised-button
+          color="primary"
+          class="full-width login-button"
+          type="submit"
+        >
+          Login
+        </button>
+      </form>
+      <div *ngIf="error" class="error-message">{{ error }}</div>
+    </div>
+  </div>
+</div>

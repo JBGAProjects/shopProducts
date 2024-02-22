@@ -1,0 +1,29 @@
+.container {
+    padding: 20px;
+
+  
+  .products-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .product {
+    width: calc(50% - 20px); /* Calcula el ancho de cada columna (50% con 20px de margen entre columnas) */
+    max-width: 500px; /* Tamaño máximo de 500px para cada producto */
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .product img {
+    max-width: 100%; /* Establece el ancho máximo del thumbnail al 100% del contenedor */
+    height: auto;
+    max-height: 200px; /* Establece el tamaño máximo de altura para el thumbnail */
+  }
+  
+}
